@@ -15,6 +15,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'users',
+    'brands',
+    'products',
     'rest_framework',
     'rest_framework_simplejwt',
     'drf_yasg',

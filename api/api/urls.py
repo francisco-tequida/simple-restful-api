@@ -3,10 +3,14 @@ from django.urls import path, include
 from rest_framework import routers
 from swagger_documentation.documentation import schema_view
 from users.views import UserModelViewSet
+from brands.views import BrandModelViewSet
+from products.views import ProductModelViewSet
 from rest_framework_simplejwt import views as jwt_views
 
 router = routers.DefaultRouter()
 router.register(r"api/users", UserModelViewSet, "users")
+router.register(r"api/brands", BrandModelViewSet, "brands")
+router.register(r"api/products", ProductModelViewSet, "products")
 
 urlpatterns = [
     path(
