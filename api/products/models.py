@@ -1,5 +1,5 @@
-import typing
 from django.db import models
+from django.contrib.auth.models import User
 from django.utils.text import slugify
 from brands.models import Brand
 
@@ -21,3 +21,13 @@ class Product(models.Model):
         """Override save method to generete a valid slug"""
         self.slug = slugify(self.name)
         super(Product, self).save(*args, **kwargs)
+
+
+class ProductTrack(models.Model):
+    """Class used to track every time a specific product is requested"""
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.product.name
