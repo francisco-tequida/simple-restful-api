@@ -1,0 +1,112 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "sku": "ABCDEF0123456789",
+        "name": "Shirt One",
+        "price": "12.99000",
+        "brand": 1,
+        "slug": "shirt-one"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "sku": "ABCDEF0123456780",
+        "name": "Shirt Two",
+        "price": "13.99000",
+        "brand": 2,
+        "slug": "shirt-two"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "sku": "ABCDEF0123456781",
+        "name": "Shirt Three",
+        "price": "14.99000",
+        "brand": 3,
+        "slug": "shirt-three"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+        "sku": "ABCDEF0123456782",
+        "name": "Shirt Four",
+        "price": "14.99000",
+        "brand": 4,
+        "slug": "shirt-four"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+        "sku": "ABCDEF0123456783",
+        "name": "Jacket One",
+        "price": "27.99000",
+        "brand": 5,
+        "slug": "jacket-one"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+        "sku": "ABCDEF0123456784",
+        "name": "Jacket Two",
+        "price": "28.99000",
+        "brand": 6,
+        "slug": "jacket-two"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+        "sku": "ABCDEF0123456785",
+        "name": "Jacket Three",
+        "price": "29.99000",
+        "brand": 7,
+        "slug": "jacket-three"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+        "sku": "ABCDEF0123456786",
+        "name": "Jeans One",
+        "price": "49.99000",
+        "brand": 8,
+        "slug": "jeans-one"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+        "sku": "ABCDEF0123456787",
+        "name": "Jeans Two",
+        "price": "50.99000",
+        "brand": 9,
+        "slug": "jeans-two"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+        "sku": "ABCDEF0123456788",
+        "name": "Jeans Three",
+        "price": "51.99000",
+        "brand": 10,
+        "slug": "jeans-three"
+    }
+}
+]
