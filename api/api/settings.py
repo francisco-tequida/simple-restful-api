@@ -1,11 +1,13 @@
+import os
 from pathlib import Path
 from datetime import timedelta
 import environ
 
-env = environ.Env()
-environ.Env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env.dev'))
 
 SECRET_KEY = env("SECRET_KEY", default="unsafe-secret-key")
 
@@ -118,3 +120,10 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
 }
+
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+SENDGRID_API_KEY = env("SENDGRID_API_KEY", default="apikey")
+
+TEMPLATE_ID = env("TEMPLATE_ID")
+FROM_EMAIL = env("FROM_EMAIL")

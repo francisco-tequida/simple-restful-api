@@ -3,6 +3,8 @@ from rest_framework.response import Response
 from products.models import Product, ProductTrack
 from products.serializers import ProductSerializer
 from permissions.product_permissions import ProductPermission
+from django.forms.models import model_to_dict
+from utils.products_utils import send_product_information_updated_email
 
 
 class ProductModelViewSet(viewsets.ModelViewSet):
@@ -24,5 +26,29 @@ class ProductModelViewSet(viewsets.ModelViewSet):
             ProductTrack.objects.create(product=instance)
         elif request.user.is_staff is False:
             ProductTrack.objects.create(product=instance, user=request.user)
+
+        return Response(serializer.data)
+
+    def update(self, request, *args, **kwargs):
+        """Override update method to send an email everytime a product info is
+        updated"""
+        partial = kwargs.pop('partial', False)
+
+        instance = self.get_object()
+        prev_data = model_to_dict(instance)
+        curr_data = request.data
+
+        serializer = self.get_serializer(
+            instance,
+            data=request.data,
+            partial=partial
+        )
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+
+        if getattr(instance, '_prefetched_objects_cache', None):
+            instance._prefetched_objects_cache = {}
+
+        send_product_information_updated_email(prev_data, curr_data)
 
         return Response(serializer.data)
