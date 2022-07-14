@@ -5,7 +5,7 @@
 > cd simple-restful-api
 > docker-compose up -d --build
 ```
-**Note:** Some files might need to change EOL from CRLF to LF to run properly
+**Note:** Some files (like entrypoint.sh) might need to change EOL from CRLF to LF to run properly on Windows environments. Linux environments may require to add exec mode to some files (like entrypoint.sh, :( chmod +x entrypoint.sh)
 
 # User types and restrictions
 The *admin* users can create/update/delete/retrive other users or admins and can create/update/delete/retrive products as well. The following data is valid for an admin user.
@@ -44,7 +44,7 @@ This project uses [**SendGrid**](https://sendgrid.com/) as notification system.
 > You need a [**Dynamic Template ID**](https://docs.sendgrid.com/ui/sending-email/how-to-send-an-email-with-dynamic-transactional-templates) and add it to the env variables. The minimum variables expected to be found inside the templeta are: *prev_sku*, *curr_sku*, *prev_name*, *curr_name*, *prev_price*, *curr_price*, *prev_brand*, *curr_brand*
 
 # Proposal for the future
-> We can split the monolithic application into services. Each application would be a service.
+> We can break the monolithic application into services. Each application would be a service.
 
 > From every service we can create an image and upload it to a cloud image registry.
 
