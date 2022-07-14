@@ -12,4 +12,10 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
+COPY ./entrypoint.sh .
+RUN sed -i 's/\r$//g' /usr/src/api/entrypoint.sh
+RUN chmod +x /usr/src/api/entrypoint.sh
+
 COPY . .
+
+ENTRYPOINT ["/usr/src/api/entrypoint.sh"]

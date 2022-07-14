@@ -1,0 +1,72 @@
+[
+{
+    "model": "brands.brand",
+    "pk": 1,
+    "fields": {
+        "name": "Brand 1"
+    }
+},
+{
+    "model": "brands.brand",
+    "pk": 2,
+    "fields": {
+        "name": "Brand 2"
+    }
+},
+{
+    "model": "brands.brand",
+    "pk": 3,
+    "fields": {
+        "name": "Brand 3"
+    }
+},
+{
+    "model": "brands.brand",
+    "pk": 4,
+    "fields": {
+        "name": "Brand 4"
+    }
+},
+{
+    "model": "brands.brand",
+    "pk": 5,
+    "fields": {
+        "name": "Brand 5"
+    }
+},
+{
+    "model": "brands.brand",
+    "pk": 6,
+    "fields": {
+        "name": "Brand 6"
+    }
+},
+{
+    "model": "brands.brand",
+    "pk": 7,
+    "fields": {
+        "name": "Brand 7"
+    }
+},
+{
+    "model": "brands.brand",
+    "pk": 8,
+    "fields": {
+        "name": "Brand 8"
+    }
+},
+{
+    "model": "brands.brand",
+    "pk": 9,
+    "fields": {
+        "name": "Brand 9"
+    }
+},
+{
+    "model": "brands.brand",
+    "pk": 10,
+    "fields": {
+        "name": "Brand 10"
+    }
+}
+]
