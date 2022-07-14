@@ -49,6 +49,9 @@ class ProductModelViewSet(viewsets.ModelViewSet):
         if getattr(instance, '_prefetched_objects_cache', None):
             instance._prefetched_objects_cache = {}
 
-        send_product_information_updated_email(prev_data, curr_data)
+        try:
+            send_product_information_updated_email(prev_data, curr_data)
+        except Exception:
+            raise Exception("SendGrid exception, are all SendGrid env variables set properly?")
 
         return Response(serializer.data)
