@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
+from rest_framework import status
 from products.models import Product, ProductTrack
 from products.serializers import ProductSerializer
 from permissions.product_permissions import ProductPermission
@@ -52,6 +53,8 @@ class ProductModelViewSet(viewsets.ModelViewSet):
         try:
             send_product_information_updated_email(prev_data, curr_data)
         except Exception:
-            raise Exception("SendGrid exception, are all SendGrid env variables set properly?")
+            return Response({
+                "message": "SendGrid exception, are all SendGrid env variables set properly?"
+            },status=status.HTTP_400_BAD_REQUEST)
 
         return Response(serializer.data)
